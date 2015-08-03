@@ -1,0 +1,40 @@
+{
+  "name": "ng-larily",
+  "tutorials": [
+
+    {
+      "name": "angular_module",
+      "steps": [
+        {"name": "ng_app"},
+        {"name": "angular_modules"}
+      ]
+    },
+    {
+      "name": "state_provider",
+      "steps": [
+        {"name": "ui_router_ui_view"},
+        {"name": "angular_config"},
+        {"name": "state-provider-add-state"}
+      ]
+    },
+    {
+      "name": "angular_controller",
+      "steps": [
+        {"name": "ui_router_ui_view"},
+        {"name": "angular_scope"},
+        {"name": "angular_ng_repeat"},
+        {"name": "ui_router_ui_sref"}
+      ]
+
+    },
+    {
+      "name": "angular_service",
+      "steps": [
+        {"name": "angular_factory"},
+        {"name": "create_angular_service"},
+        {"name": "angular_injector"},
+        {"name": "angular_$http"}
+      ]
+    }
+  ]
+}

@@ -19,16 +19,22 @@
 </body>
 
 <script>
-    var app = angular.module("nglarily", ['ui.router']);
+    var logError = function(err){console.err(err);},
+            app = angular.module("nglarily", ['ui.router']);
 
     app.config(["$stateProvider", function ($stateProvider) {
         $stateProvider
                 .state("home-page", {
                     url: "",
                     templateUrl: "pages/home.html",
-                    controller: ["$scope", "ItemService", function ($scope, ItemService) {
-                        $scope.guide = ItemService.guide
-                        $scope.tutorials = $scope.guide.tutorials
+                    controller: ["$scope", "ApiService", function ($scope, ApiService) {
+                        var success = function(guide){
+                            $scope.guide    = guide;
+                            $scope.tutorials = guide.tutorials
+
+                        };
+                        ApiService.getAngularGuide(success, logError);
+
                     }]
                 })
                 .state("tutorials", {
@@ -37,53 +43,16 @@
                 });
     }]);
 
-    app.factory("ItemService", function () {
-        var service = {},
-                guide = {
-                    name: "ng-larily",
-                    tutorials: [
-
-                        {
-                            name: "angular_module",
-                            steps: [
-                                {name: "ng_app"},
-                                {name: "angular_modules"}
-                            ]
-                        },
-                        {
-                            name: "state_provider",
-                            steps: [
-                                {name: "ui_router_ui_view"},
-                                {name: "angular_config"},
-                                {name: "state-provider-add-state"}
-                            ]
-                        },
-                        {
-                            name: "angular_controller",
-                            steps: [
-                                {name: "ui_router_ui_view"},
-                                {name: "angular_scope"},
-                                {name: "angular_ng_repeat"},
-                                {name: "ui_router_ui_sref"}
-                            ]
-
-                        },
-                        {
-                            name: "angular_service",
-                            steps: [
-                                {name: "angular_factory"},
-                                {name: "create_angular_service"},
-                                {name: "angular_injector"},
-                                {name: "angular_$http"}
-                            ]
-
-                        }
-
-                    ]
-                };
-        service.guide = guide;
+    app.factory("ApiService", ["$http", function ($http) {
+        var service = {};
+        service.getAngularGuide = function(success, error){
+            $http.get("api/angular-book.json").then( function(response){
+                success(response.data);
+            }, error);
+        };
         return service;
-    });
+
+    }]);
 </script>
 
 </html>
