@@ -10,9 +10,9 @@
       ]
     },
     {
-      "name": "state_provider",
+      "name": "ui_router",
       "steps": [
-        {"name": "ui_router_ui_view"},
+        {"name": "ui_view"},
         {"name": "angular_config"},
         {"name": "state-provider-add-state"}
       ]

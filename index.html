@@ -10,54 +10,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/services/app-service.js"></script>
+    <script src="app/controllers/home-controller.js"></script>
 </head>
 
 <body ng-app="nglarily"> 
-<div id=“current-page” ui-view>
-    <!—pages are rendered here-->
-</div>
+    <div id=“current-tutorial” ui-view>
+    </div>
 </body>
-
-<script>
-    var logError = function(err){console.err(err);},
-            app = angular.module("nglarily", ['ui.router']);
-
-    app.config(["$stateProvider", function ($stateProvider) {
-        $stateProvider
-                .state("home-page", {
-                    url: "",
-                    templateUrl: "pages/home.html",
-                    controller: ["$scope", "ApiService", function ($scope, ApiService) {
-                        var success = function(guide){
-                            $scope.guide    = guide;
-                            $scope.tutorials = guide.tutorials
-
-                        };
-                        ApiService.getAngularGuide(success, logError);
-
-                    }]
-                })
-                .state("tutorial", {
-                    url: "/tutorials/:name",
-                    templateUrl: "pages/tutorial.html"
-                })
-                .state("tutorial.step", {
-                    url: "/tutorial/:tutorial/step/:step",
-                    templateUrl: "pages/step.html"
-                });
-    }]);
-
-    app.factory("ApiService", ["$http", function ($http) {
-        var service = {};
-        service.getAngularGuide = function(success, error){
-            $http.get("api/angular-book.json").then( function(response){
-                success(response.data);
-            }, error);
-        };
-        return service;
-
-    }]);
-</script>
 
 </html>
 
