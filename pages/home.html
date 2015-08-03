@@ -2,10 +2,10 @@
     <p class="row">Way forward : </p>
     <ol id="guide-contents">        <li class="row" ng-repeat="tutorial in tutorials">
 
-            <a class="row" ui-sref="tutorials({name: tutorial.name})">{{tutorial.name}}</a>
+            <a class="row" ui-sref="tutorial({name: tutorial.name})">{{tutorial.name}}</a>
             <ul>
                 <li ng-repeat="step in tutorial.steps">
-                    <a ui-sref="tutorials({name: tutorial.name})"> {{step.name}}</a>
+                    <a ui-sref="tutorial.step({tutorial: tutorial.name, step: step.name})"> {{step.name}}</a>
                 </li>
             </ul>
         </li>

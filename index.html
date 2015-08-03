@@ -37,9 +37,13 @@
 
                     }]
                 })
-                .state("tutorials", {
+                .state("tutorial", {
                     url: "/tutorials/:name",
                     templateUrl: "pages/tutorial.html"
+                })
+                .state("tutorial.step", {
+                    url: "/tutorial/:tutorial/step/:step",
+                    templateUrl: "pages/step.html"
                 });
     }]);
 
