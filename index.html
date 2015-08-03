@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nglarily</title>
+    <meta name="keywords" content="javascript, angularjs, jquery, html5, css3, template"/>
+    <meta name="description" content="A sample angularjs app."/>
+    <meta charset="utf-8">
+
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+</head>
+
+<body ng-app="nglarily"> 
+<div id=“current-page” ui-view>
+    <!—pages are rendered here-->
+</div>
+</body>
+
+<script>
+    var app = angular.module("nglarily", ['ui.router']);
+
+    app.config(["$stateProvider", function ($stateProvider) {
+        $stateProvider
+                .state("home-page", {
+                    url: "",
+                    templateUrl: "pages/home.html",
+                    controller: ["$scope", "ItemService", function ($scope, ItemService) {
+                        $scope.guide = ItemService.guide
+                        $scope.tutorials = $scope.guide.tutorials
+                    }]
+                })
+                .state("tutorials", {
+                    url: "/tutorials/:name",
+                    templateUrl: "pages/tutorial.html"
+                });
+    }]);
+
+    app.factory("ItemService", function () {
+        var service = {},
+                guide = {
+                    name: "ng-larily",
+                    tutorials: [
+
+                        {
+                            name: "angular_module",
+                            steps: [
+                                {name: "ng_app"},
+                                {name: "angular_modules"}
+                            ]
+                        },
+                        {
+                            name: "state_provider",
+                            steps: [
+                                {name: "ui_router_ui_view"},
+                                {name: "angular_config"},
+                                {name: "state-provider-add-state"}
+                            ]
+                        },
+                        {
+                            name: "angular_controller",
+                            steps: [
+                                {name: "ui_router_ui_view"},
+                                {name: "angular_scope"},
+                                {name: "angular_ng_repeat"},
+                                {name: "ui_router_ui_sref"}
+                            ]
+
+                        },
+                        {
+                            name: "angular_service",
+                            steps: [
+                                {name: "angular_factory"},
+                                {name: "create_angular_service"},
+                                {name: "angular_injector"},
+                                {name: "angular_$http"}
+                            ]
+
+                        }
+
+                    ]
+                };
+        service.guide = guide;
+        return service;
+    });
+</script>
+
+</html>
+
+
