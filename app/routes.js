@@ -9,8 +9,9 @@
           controller: "HomeController"
         })
         .state("tutorial", {
-          url: "/tutorials/:name",
-          templateUrl: "pages/tutorial.html"
+          url: "/tutorials/:tutorial",
+          templateUrl: "pages/tutorial.html",
+          controller: "TutorialController"
         })
         .state("tutorial.step", {
           url: "/tutorial/:tutorial/step/:step",
