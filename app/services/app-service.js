@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.factory("ApiService", ["$http", function ($http) {
+  nglarily.module.factory("ApiService", ["$http", function ($http) {
     var
         findByName = function (name, tutorials) {
           for(var i=0; i< tutorials.length; i++){

@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.config(["$stateProvider", function ($stateProvider) {
+  nglarily.module.config(["$stateProvider", function ($stateProvider) {
     $stateProvider
         .state("home-page", {
           url: "",

@@ -1,5 +1,5 @@
 (function () {
   "use strict"
-  window.nglarily = angular.module("nglarily", ['ui.router']);
+  window.nglarily = {module: angular.module("nglarily", ['ui.router'])};
 
 }).call(this);
