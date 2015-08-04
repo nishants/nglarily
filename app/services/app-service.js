@@ -6,7 +6,7 @@
         findByName = function (name, tutorials) {
           for(var i=0; i< tutorials.length; i++){
             if(tutorials[i].name == name){
-              return tutorials[i];
+              return new nglarily.models.Tutorial(tutorials[i]);
             }
           }
           return null;
