@@ -2,6 +2,7 @@
   "use strict"
 
   nglarily.module.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+    //go to nglarily book by default
     $urlRouterProvider.when("", "/book/nglarily");
 
     $stateProvider

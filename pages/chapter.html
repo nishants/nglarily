@@ -1,9 +1,5 @@
-<div ui-view>
-    <!-- Pages are rendered here. -->
-</div>
-
 <!--display chapter-->
-<div class="chapter container page">
+<div class="chapter container">
     <h1 class="chapter-name row">{{chapter.name}}</h1>
 
     <!-- lessons list-->
@@ -12,6 +8,10 @@
             <a ui-sref="book.chapter.lesson({lesson : lesson.name})">{{lesson.name}}</a>
         </li>
     </ul>
+</div>
+
+<div ui-view>
+    <!-- Pages are rendered here. -->
 </div>
 
 
