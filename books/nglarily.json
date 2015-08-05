@@ -5,7 +5,21 @@
     {
       "name": "angular_module",
       "lessons": [
-        {"name": "ng_app"},
+        {
+          "name": "ng_app",
+          "sections": [
+            {"type": "code", "href": "books/code/1.js"},
+            {
+              "type": "text",
+              "head": "How this works",
+              "lines": [
+                "angular reads inside this container",
+                "scanning its children for angular elements",
+                "angular will reject anything outside it."
+              ]
+            }
+          ]
+        },
         {"name": "angular_modules"}
       ]
     },
