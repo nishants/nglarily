@@ -6,14 +6,14 @@
         var error = function (err) {
               console.err(err);
             },
-            tutorialName = function () {
-              return $stateParams.tutorial;
+            chapterName = function () {
+              return $stateParams.chapter;
             },
-            render = function (tutorial) {
-              $scope.tutorial = tutorial;
+            render = function (chapter) {
+              $scope.chapter = chapter;
             };
 
-        ApiService.getTutorial(tutorialName(), render, error);
+        ApiService.getTutorial(chapterName(), render, error);
       }]
   );
 
