@@ -2,7 +2,7 @@
     <p class="row">{{chapter.name}}</p>
 
     <div ng-repeat="lesson in chapter.lessons" class="{{activelesson: isActive(lesson} } row">
-        <a ui-sref="chapter.lesson({chapter : chapter.name, lesson : lesson.name})">{{lesson.name}}</a>
+        <a ui-sref="book.chapter.lesson({chapter : chapter.name, lesson : lesson.name})">{{lesson.name}}</a>
     </div>
 
     <div ui-view class="container">

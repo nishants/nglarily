@@ -1,11 +1,11 @@
 <div class="page container book">
     <p class="row">Your last angular book</p>
-    <ol id="book-contents">        <li class="row" ng-repeat="chapter in book.chapters">
-
-            <a class="row" ui-sref="chapter({chapter: chapter.name})">{{chapter.name}}</a>
+    <ol id="book-contents" ui-view>
+        <li class="row" ng-repeat="chapter in book.chapters">
+            <a class="row" ui-sref="book.chapter({chapter: chapter.name})">{{chapter.name}}</a>
             <ul>
                 <li ng-repeat="lesson in chapter.lessons">
-                    <a ui-sref="chapter.lesson({chapter: chapter.name, lesson: lesson.name})"> {{lesson.name}}</a>
+                    <a ui-sref="book.chapter.lesson({chapter: chapter.name, lesson: lesson.name})"> {{lesson.name}}</a>
                 </li>
             </ul>
         </li>
