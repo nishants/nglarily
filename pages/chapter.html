@@ -2,12 +2,16 @@
     <!-- Pages are rendered here. -->
 </div>
 
+<!--display chapter-->
 <div class="chapter container bg-yellow-color page">
-    <p class="row">{{chapter.name}}</p>
+    <h1 class="chapter-name row">{{chapter.name}}</h1>
 
-    <div ng-repeat="lesson in chapter.lessons" class="{{activelesson: isActive(lesson} } row">
-        <a ui-sref="book.chapter.lesson({lesson : lesson.name})">{{lesson.name}}</a>
-    </div>
+    <!-- lessons list-->
+    <ul class="lessons list-group">
+        <li ng-repeat="lesson in chapter.lessons" class="list-group-item">
+            <a ui-sref="book.chapter.lesson({lesson : lesson.name})">{{lesson.name}}</a>
+        </li>
+    </ul>
 </div>
 
 
