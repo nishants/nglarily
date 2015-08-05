@@ -4,7 +4,7 @@
   nglarily.module.controller("ChapterController", ["$scope", "ApiService", "$stateParams", function ($scope, ApiService, $stateParams) {
 
         var error = function (err) {
-              console.err(err);
+              console.error(err);
             },
             bookName = function () {
               return $stateParams.book;

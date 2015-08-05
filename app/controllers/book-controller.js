@@ -6,7 +6,7 @@
               $scope.book = book;
             },
             error = function (err) {
-              console.err(err);
+              console.error(err);
             };
 
         ApiService.book(success, error);
