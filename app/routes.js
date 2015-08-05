@@ -3,10 +3,10 @@
 
   nglarily.module.config(["$stateProvider", function ($stateProvider) {
     $stateProvider
-        .state("home-page", {
+        .state("book-contents-page", {
           url: "",
-          templateUrl: "pages/home.html",
-          controller: "HomeController"
+          templateUrl: "pages/book.html",
+          controller: "BookController"
         })
         .state("chapter", {
           url: "/chapter/:chapter",
