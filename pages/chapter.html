@@ -1,12 +1,10 @@
-<div  class="chapter page container">
-    <p class="row">{{chapter.name}}</p>
+<p class="row">{{chapter.name}}</p>
 
-    <div ng-repeat="lesson in chapter.lessons" class="{{activelesson: isActive(lesson} } row">
-        <a ui-sref="book.chapter.lesson({lesson : lesson.name})">{{lesson.name}}</a>
-    </div>
-
-    <div ui-view class="lesson container">
-        <!-- Pages are rendered here. -->
-    </div>
-
+<div ng-repeat="lesson in chapter.lessons" class="{{activelesson: isActive(lesson} } row">
+    <a ui-sref="book.chapter.lesson({lesson : lesson.name})">{{lesson.name}}</a>
 </div>
+
+<div ui-view class="lesson container bg-green-color page">
+    <!-- Pages are rendered here. -->
+</div>
+
