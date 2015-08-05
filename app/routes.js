@@ -9,12 +9,12 @@
           controller: "HomeController"
         })
         .state("tutorial", {
-          url: "/tutorials/:tutorial",
+          url: "/tutorial/:tutorial",
           templateUrl: "pages/tutorial.html",
           controller: "TutorialController"
         })
         .state("tutorial.step", {
-          url: "/tutorial/:tutorial/step/:step",
+          url: "/step/:step",
           templateUrl: "pages/step.html"
         });
   }]);
