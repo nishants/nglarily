@@ -13,9 +13,9 @@
           templateUrl: "pages/chapter.html",
           controller: "ChapterController"
         })
-        .state("chapter.step", {
-          url: "/step/:step",               // creates nested route: chapter/:chapter/step/:step (because state is named chapter.step).
-          templateUrl: "pages/step.html",
+        .state("chapter.lesson", {
+          url: "/lesson/:lesson",               // creates nested route: chapter/:chapter/step/:step (because state is named chapter.step).
+          templateUrl: "pages/lesson.html",
           controller: "LessonController"
         });
   }]);
