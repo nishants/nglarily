@@ -12,7 +12,7 @@
           return null;
         },
 
-        getAngularGuide = function (success, error) {
+        angularBook = function (success, error) {
           $http.get("api/angular-book.json").then(function (response) {
             success(response.data);
           }, error);
@@ -25,7 +25,7 @@
         };
 
     return {
-      getAngularGuide: getAngularGuide,
+      angularBook: angularBook,
       getChapter: getChapter
     };
   }]);

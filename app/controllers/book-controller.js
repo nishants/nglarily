@@ -2,14 +2,14 @@
   "use strict"
 
   nglarily.module.controller("BookController", ["$scope", "ApiService", function ($scope, ApiService) {
-        var success = function (guide) {
-              $scope.guide = guide;
+        var success = function (book) {
+              $scope.book = book;
             },
             error = function (err) {
               console.err(err);
             };
 
-        ApiService.getAngularGuide(success, error);
+        ApiService.angularBook(success, error);
       }]
   );
 
