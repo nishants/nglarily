@@ -1,6 +1,11 @@
 <div class="page container book">
+
+    <div ui-view class="chapter container">
+        <!-- Pages are rendered here. -->
+    </div>
+
     <p class="row">Your last angular book</p>
-    <ol id="book-contents" ui-view>
+    <ol id="book-contents">
         <li class="row" ng-repeat="chapter in book.chapters">
             <a class="row" ui-sref="book.chapter({chapter: chapter.name})">{{chapter.name}}</a>
             <ul>
