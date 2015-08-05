@@ -13,13 +13,13 @@
         },
 
         angularBook = function (success, error) {
-          $http.get("api/angular-book.json").then(function (response) {
+          $http.get("books/nglarily.json").then(function (response) {
             success(response.data);
           }, error);
         },
 
         getChapter = function (chapterName, success, error) {
-          $http.get("api/angular-book.json").then(function (response) {
+          $http.get("books/nglarily.json").then(function (response) {
             success(findByName(chapterName, response.data.chapters));
           }, error);
         };

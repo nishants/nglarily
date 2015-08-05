@@ -2,11 +2,11 @@
   "use strict"
 
   nglarily.module.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/book");
+    $urlRouterProvider.when("", "/book/nglarily");
 
     $stateProvider
         .state("book", {
-          url: "/book",
+          url: "/book/:book",
           templateUrl: "pages/book.html",
           controller: "BookController"
         })
