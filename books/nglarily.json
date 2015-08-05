@@ -8,7 +8,7 @@
         {
           "name": "ng_app",
           "sections": [
-            {"type": "code", "href": "books/code/1.js"},
+            {"type": "code", "href": "books/code/1.html"},
             {
               "type": "text",
               "head": "How this works",
