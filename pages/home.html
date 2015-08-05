@@ -1,6 +1,6 @@
 <div id="home-page" class="page container">
     <p class="row">Your last angular guide</p>
-    <ol id="guide-contents">        <li class="row" ng-repeat="chapter in guide.tutorials">
+    <ol id="guide-contents">        <li class="row" ng-repeat="chapter in guide.chapters">
 
             <a class="row" ui-sref="chapter({chapter: chapter.name})">{{chapter.name}}</a>
             <ul>

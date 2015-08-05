@@ -3,10 +3,10 @@
 
   nglarily.module.factory("ApiService", ["$http", function ($http) {
     var
-        findByName = function (name, tutorials) {
-          for(var i=0; i< tutorials.length; i++){
-            if(tutorials[i].name == name){
-              return new nglarily.models.Tutorial(tutorials[i]);
+        findByName = function (name, chapters) {
+          for(var i=0; i< chapters.length; i++){
+            if(chapters[i].name == name){
+              return new nglarily.models.Chapter(chapters[i]);
             }
           }
           return null;
@@ -18,15 +18,15 @@
           }, error);
         },
 
-        getTutorial = function (tutorialName, success, error) {
+        getChapter = function (chapterName, success, error) {
           $http.get("api/angular-book.json").then(function (response) {
-            success(findByName(tutorialName, response.data.tutorials));
+            success(findByName(chapterName, response.data.chapters));
           }, error);
         };
 
     return {
       getAngularGuide: getAngularGuide,
-      getTutorial: getTutorial
+      getChapter: getChapter
     };
   }]);
 

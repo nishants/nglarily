@@ -13,8 +13,8 @@
           templateUrl: "pages/chapter.html",
           controller: "ChapterController"
         })
-        .state("tutorial.step", {
-          url: "/step/:step",               // creates nested route: tutorial/:tutorial/step/:step (because state is named tutorial.step).
+        .state("chapter.step", {
+          url: "/step/:step",               // creates nested route: chapter/:chapter/step/:step (because state is named chapter.step).
           templateUrl: "pages/step.html",
           controller: "LessonController"
         });

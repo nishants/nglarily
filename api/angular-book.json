@@ -1,6 +1,6 @@
 {
   "name": "ng-larily",
-  "tutorials": [
+  "chapters": [
 
     {
       "name": "angular_module",

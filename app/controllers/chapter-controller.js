@@ -13,7 +13,7 @@
               $scope.chapter = chapter;
             };
 
-        ApiService.getTutorial(chapterName(), render, error);
+        ApiService.getChapter(chapterName(), render, error);
       }]
   );
 
