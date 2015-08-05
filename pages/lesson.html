@@ -1,6 +1,6 @@
 <div class="lesson container page">
     <h1 class="lesson-name row">{{lesson.name}}</h1>
     <div class="lesson-section-row" ng-repeat="section in lesson.sections">
-        {{section.type}}
+        <div ng-include="'pages/'+ section.type + '-section.html'"></div>
     </div>
 </div>
