@@ -9,7 +9,7 @@
               console.err(err);
             };
 
-        ApiService.angularBook(success, error);
+        ApiService.getBook(success, error);
       }]
   );
 

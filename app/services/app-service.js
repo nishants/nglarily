@@ -1,8 +1,12 @@
 (function () {
   "use strict"
 
-  nglarily.module.factory("ApiService", ["$http", function ($http) {
+  nglarily.module.factory("ApiService", ["$http", "$stateParams", function ($http, $stateParams) {
     var
+        currentBook =function(){
+          return "books/"+ $stateParams.book +".json";
+        },
+
         findByName = function (name, chapters) {
           for(var i=0; i< chapters.length; i++){
             if(chapters[i].name == name){
@@ -13,7 +17,7 @@
         },
 
         angularBook = function (success, error) {
-          $http.get("books/nglarily.json").then(function (response) {
+          $http.get(currentBook()).then(function (response) {
             success(response.data);
           }, error);
         },
@@ -25,7 +29,7 @@
         };
 
     return {
-      angularBook: angularBook,
+      getBook: angularBook,
       getChapter: getChapter
     };
   }]);
