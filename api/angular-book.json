@@ -4,14 +4,14 @@
 
     {
       "name": "angular_module",
-      "steps": [
+      "lessons": [
         {"name": "ng_app"},
         {"name": "angular_modules"}
       ]
     },
     {
       "name": "ui_router",
-      "steps": [
+      "lessons": [
         {"name": "ui_view"},
         {"name": "angular_config"},
         {"name": "state-provider-add-state"}
@@ -19,7 +19,7 @@
     },
     {
       "name": "angular_controller",
-      "steps": [
+      "lessons": [
         {"name": "ui_router_ui_view"},
         {"name": "angular_scope"},
         {"name": "angular_ng_repeat"},
@@ -29,7 +29,7 @@
     },
     {
       "name": "angular_service",
-      "steps": [
+      "lessons": [
         {"name": "angular_factory"},
         {"name": "create_angular_service"},
         {"name": "angular_injector"},

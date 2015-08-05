@@ -1,8 +1,8 @@
 <div  class="chapter page container">
     <p class="row">{{chapter.name}}</p>
 
-    <div ng-repeat="step in chapter.steps" class="{{isVisible(step} } row">
-        <a ui-sref="chapter.step({chapter : chapter.name, step : step.name})">{{step.name}}</a>
+    <div ng-repeat="lesson in chapter.lessons" class="{{activelesson: isActive(lesson} } row">
+        <a ui-sref="chapter.lesson({chapter : chapter.name, lesson : lesson.name})">{{lesson.name}}</a>
     </div>
 
     <div ui-view class="container">

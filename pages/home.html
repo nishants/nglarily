@@ -4,8 +4,8 @@
 
             <a class="row" ui-sref="chapter({chapter: chapter.name})">{{chapter.name}}</a>
             <ul>
-                <li ng-repeat="step in chapter.steps">
-                    <a ui-sref="chapter.step({chapter: chapter.name, step: step.name})"> {{step.name}}</a>
+                <li ng-repeat="lesson in chapter.lessons">
+                    <a ui-sref="chapter.lesson({chapter: chapter.name, lesson: lesson.name})"> {{lesson.name}}</a>
                 </li>
             </ul>
         </li>

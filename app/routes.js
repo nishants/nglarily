@@ -14,7 +14,7 @@
           controller: "ChapterController"
         })
         .state("chapter.lesson", {
-          url: "/lesson/:lesson",               // creates nested route: chapter/:chapter/step/:step (because state is named chapter.step).
+          url: "/lesson/:lesson",               // creates nested route: chapter/:chapter/lesson/:lesson (because state is named chapter.lesson).
           templateUrl: "pages/lesson.html",
           controller: "LessonController"
         });

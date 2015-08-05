@@ -4,14 +4,14 @@
   nglarily.module.controller("LessonController", ["$scope", "$stateParams", function ($scope, $stateParams) {
 
         var
-            stepName = function () {
-              return $stateParams.step;
+            currentLesson = function () {
+              return $stateParams.lesson;
             },
-            render = function (step) {
-              $scope.step = step;
+            render = function (lesson) {
+              $scope.lesson = lesson;
             };
 
-        render({name: stepName()});
+        render({name: currentLesson()});
       }]
   );
 
