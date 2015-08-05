@@ -6,9 +6,6 @@
         var error = function (err) {
               console.err(err);
             },
-            chapterName = function () {
-              return $stateParams.chapter;
-            },
             bookName = function () {
               return $stateParams.book;
             },
@@ -16,7 +13,7 @@
               $scope.chapter = chapter;
             };
 
-        ApiService.getChapter(chapterName(), render, error);
+        ApiService.chapter(render, error);
         $scope.book = bookName(); //TODO required for a bug in ui.router(or i dont get it?
       }]
   );

@@ -6,10 +6,14 @@
         currentBook =function(){
           return "books/"+ $stateParams.book +".json";
         },
+        chapterName = function () {
+          return $stateParams.chapter;
+        },
 
-        findByName = function (name, chapters) {
+        currentFrom = function (chapters) {
+          var fromUrl = chapterName();
           for(var i=0; i< chapters.length; i++){
-            if(chapters[i].name == name){
+            if(chapters[i].name == fromUrl){
               return new nglarily.models.Chapter(chapters[i]);
             }
           }
@@ -22,16 +26,16 @@
           }, error);
         },
 
-        getChapter = function (chapterName, success, error) {
-          var withChapters = function (book) {
-            success(findByName(chapterName, book.chapters));
+        getChapter = function (success, error) {
+          var currentChapter = function (book) {
+            success(currentFrom(book.chapters));
           };
-          angularBook(withChapters, error);
+          angularBook(currentChapter, error);
         };
 
     return {
-      getBook: angularBook,
-      getChapter: getChapter
+      book: angularBook,
+      chapter: getChapter
     };
   }]);
 
