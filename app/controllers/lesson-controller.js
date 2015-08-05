@@ -11,7 +11,7 @@
               $scope.lesson = lesson;
             };
 
-        render({name: currentLesson()});
+        render({name: currentLesson(), sections: [{type: "code"}]});
       }]
   );
 
