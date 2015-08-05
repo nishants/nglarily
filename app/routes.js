@@ -16,7 +16,7 @@
         .state("tutorial.step", {
           url: "/step/:step",               // creates nested route: tutorial/:tutorial/step/:step (because state is named tutorial.step).
           templateUrl: "pages/step.html",
-          controller: "StepController"
+          controller: "LessonController"
         });
   }]);
 

@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("StepController", ["$scope", "$stateParams", function ($scope, $stateParams) {
+  nglarily.module.controller("LessonController", ["$scope", "$stateParams", function ($scope, $stateParams) {
 
         var
             stepName = function () {
