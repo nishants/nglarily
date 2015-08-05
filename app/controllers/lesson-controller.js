@@ -1,17 +1,17 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("LessonController", ["$scope", "$stateParams", function ($scope, $stateParams) {
+  nglarily.module.controller("LessonController", ["$scope", "ApiService", function ($scope, ApiService) {
 
         var
-            currentLesson = function () {
-              return $stateParams.lesson;
+            error = function (err) {
+              console.error(err);
             },
             render = function (lesson) {
               $scope.lesson = lesson;
             };
 
-        render({name: currentLesson(), sections: [{type: "code"}]});
+        ApiService.lesson(render, error)
       }]
   );
 
