@@ -2,9 +2,14 @@
   min-height: 100vh;
 }
 
-.bg-red-color{
+.bg-yellow-color {
   background-color: #ff8b36;
 }
+
+.bg-yellow-color {
+  background-color: #ffc116;
+}
+
 .bg-green-color{
-  background-color: #93ffc8;
+  background-color: #18bc9c;
 }
