@@ -23,9 +23,10 @@
         },
 
         getChapter = function (chapterName, success, error) {
-          $http.get("books/nglarily.json").then(function (response) {
-            success(findByName(chapterName, response.data.chapters));
-          }, error);
+          var withChapters = function (book) {
+            success(findByName(chapterName, book.chapters));
+          };
+          angularBook(withChapters, error);
         };
 
     return {
