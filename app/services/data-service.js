@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.factory("ApiService", ["$http", "$stateParams", function ($http, $stateParams) {
+  nglarily.module.factory("DataService", ["$http", "$stateParams", function ($http, $stateParams) {
     var
         currentBook =function(){
           return "books/"+ $stateParams.book +".json";

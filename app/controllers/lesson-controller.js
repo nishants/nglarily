@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("LessonController", ["$scope", "ApiService", function ($scope, ApiService) {
+  nglarily.module.controller("LessonController", ["$scope", "DataService", function ($scope, DataService) {
 
         var
             error = function (err) {
@@ -11,7 +11,7 @@
               $scope.lesson = lesson;
             };
 
-        ApiService.lesson(render, error)
+        DataService.lesson(render, error)
       }]
   );
 
