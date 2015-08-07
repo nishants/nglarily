@@ -14,7 +14,7 @@
         .state("book.chapter", {
           url: "/chapter/:chapter",
           templateUrl: "pages/chapter.html",
-          controller: "ChapterController"
+          controller: "Chapter"
         })
         .state("book.chapter.lesson", {
           url: "/lesson/:lesson",               // creates nested route: chapter/:chapter/lesson/:lesson (because state is named chapter.lesson).

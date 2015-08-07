@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("ChapterController", ["$scope", "DataService", "$stateParams", function ($scope, DataService, $stateParams) {
+  nglarily.module.controller("Chapter", ["$scope", "DataService", "$stateParams", function ($scope, DataService, $stateParams) {
 
         var error = function (err) {
               console.error(err);
