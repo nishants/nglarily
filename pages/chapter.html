@@ -1,5 +1,5 @@
 <!--display chapter-->
-<div class="chapter container">
+<div id="expanded-chapter" class="chapter container">
     <h1 class="chapter-name row">{{chapter.name}}</h1>
 
     <!-- lessons list-->
@@ -10,8 +10,10 @@
     </ul>
 </div>
 
-<div ui-view>
-    <!-- Pages are rendered here. -->
+<div id="collapsed-chapter" class="chapter container">
+    <a class="lesson-name row" ui-sref="book.chapter({chapter: chapter.name})">{{chapter.name}}</a>
 </div>
+
+<div ui-view><!-- Pages are rendered here. --></div>
 
 
