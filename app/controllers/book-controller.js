@@ -8,6 +8,9 @@
             error = function (err) {
               console.error(err);
             };
+        $scope.collapseBook = function(){
+          return true;
+        };
 
         DataService.book(success, error);
       }]

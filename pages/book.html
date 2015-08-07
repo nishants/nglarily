@@ -1,12 +1,8 @@
-<div ui-view >
-    <!-- chapters are rendered here. -->
-</div>
-
-<div class="book container page">
+<div class="book container">
     <h1 class="book-name row">{{book.name}}</h1>
 
     <!--chapters-->
-    <div class="chapter-item row" ng-repeat="chapter in book.chapters">
+    <div class="chapter-item row" ng-repeat="chapter in book.chapters" ng-hide="collapseBook()">
         <a class="chapter-link" ui-sref="book.chapter({chapter: chapter.name})">{{chapter.name}}</a>
 
         <!--lessons-->
@@ -17,4 +13,7 @@
         </ul>
 
     </div>
+</div>
+<div ui-view >
+    <!-- chapters are rendered here. -->
 </div>
