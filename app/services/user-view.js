@@ -5,6 +5,7 @@
     var currentChapter = function () {
       return $stateParams.chapter;
     };
+
     var currentLesson = function () {
       return $stateParams.lesson;
     };
@@ -16,7 +17,8 @@
 
       expandChapter: function () {
         return currentLesson() == null;
-      }
+      },
+      currentLesson: currentLesson
     };
 
   }]);

@@ -1,3 +1,11 @@
 .page{
   min-height: 100vh;
 }
+
+a.hidden-chapter {
+  text-decoration: none !important;
+  color: #cecece;
+
+}
+
+ul {list-style-type: none;}

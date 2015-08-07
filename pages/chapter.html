@@ -1,18 +1,19 @@
 <!--display chapter-->
-<div id="expanded-chapter" class="chapter container" ng-show="expandChapter()">
+<div id="expanded-chapter" class="chapter container" >
     <h1 class="chapter-name row">{{chapter.name}}</h1>
 
     <!-- lessons list-->
     <ul class="lessons list-group">
-        <li ng-repeat="lesson in chapter.lessons" class="list-group-item">
-            <a ui-sref="book.chapter.lesson({lesson : lesson.name})">{{lesson.name}}</a>
+        <li ng-repeat="lesson in chapter.lessons"
+            class="list-group-item"
+            ng-class="{'active': isCurrent(lesson.name)}">
+
+            <a ui-sref="book.chapter.lesson({lesson : lesson.name})" >{{lesson.name}}</a>
         </li>
     </ul>
 </div>
 
-<div id="collapsed-chapter" class="chapter container" ng-show="!expandChapter()">
-    <a class="lesson-name row" ui-sref="book.chapter({chapter: chapter.name})">{{chapter.name}}</a>
-</div>
+
 
 <div ui-view><!-- Pages are rendered here. --></div>
 

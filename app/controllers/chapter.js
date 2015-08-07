@@ -13,6 +13,11 @@
         $scope.expandChapter = function () {
           return UserView.expandChapter();
         };
+
+        $scope.isCurrent = function (lessonName) {
+          return UserView.currentLesson() == lessonName;
+        };
+
         DataService.chapter(render, error);
       }]
   );
