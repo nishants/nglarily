@@ -3,6 +3,14 @@
 
   nglarily.module.factory("DataService", ["$http", "$stateParams", function ($http, $stateParams) {
     var
+        parseLessons = function(lessonsData){
+          var lessons =[];
+          for(var i = 0; i < lessonsData.length; i++){
+            lessons.push(nglarily.models.Lesson(lessonsData[i]));
+          }
+          return lessons;
+        },
+
         currentBook =function(){
           return "books/"+ $stateParams.book +".json";
         },
@@ -19,7 +27,7 @@
           var fromUrl = chapterName();
           for(var i=0; i< chapters.length; i++){
             if(chapters[i].name == fromUrl){
-              return new nglarily.models.Chapter(chapters[i]);
+              return new nglarily.models.Chapter(chapters[i], parseLessons(chapters[i].lessons));
             }
           }
           return null;

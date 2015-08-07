@@ -1,9 +1,9 @@
 (function () {
   "use strict"
 
-  var Chapter = function (data) {
+  var Chapter = function (data, lessons) {
     this.name     = data.name;
-    this.lessons  = data.lessons;
+    this.lessons  = lessons;
   };
 
   nglarily.models.Chapter = Chapter;
