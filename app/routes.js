@@ -9,7 +9,7 @@
         .state("book", {
           url: "/book/:book",
           templateUrl: "pages/book.html",
-          controller: "BookController"
+          controller: "Book"
         })
         .state("book.chapter", {
           url: "/chapter/:chapter",
