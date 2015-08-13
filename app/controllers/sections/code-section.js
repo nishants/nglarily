@@ -1,12 +1,16 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("CodeSection", ["$scope", function ($scope) {
-        var code = function () {
-          return $scope.section.href;
-        };
+  nglarily.module.controller("CodeSection", ["$scope", "SectionData", function ($scope, SectionData) {
+        var
+            showError = function (err) {
+              alert(err);
+            },
+            setCode = function (code) {
+              $scope.code = code;
+            };
 
-        $scope.code = code;
+        SectionData.codeFor($scope.section, setCode, showError);
       }]
   );
 
