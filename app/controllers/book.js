@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("Book", ["$scope", "DataService", "UserView", "BookNavigator", function ($scope, DataService, UserView, BookNavigator) {
+  nglarily.module.controller("Book", ["$scope","$window", "DataService", "UserView", "BookNavigator", function ($scope, $window, DataService, UserView, BookNavigator) {
         var success = function (book) {
               $scope.book = book;
             },
@@ -9,7 +9,7 @@
               console.error(err);
             },
             goBack = function () {
-              alert("lets go back...");
+              $window.history.back();;
             },
             goNext = function () {
               if (!$scope.book) return; // ignore if book not loaded
