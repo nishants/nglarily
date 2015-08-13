@@ -37,5 +37,21 @@ ul {list-style-type: none;}
 
 body{
   font-family: Raleway;
+  color: #656565;
+}
 
+.lesson-link{
+  background-color: #ffffff;
+}
+
+.current-lesson-link{
+  background-color: #f4f4f4;
+}
+
+a, a:visited {
+  color: #656565 !important;
+}
+
+a:hover, a:active {
+  color: #656565 !important;
 }

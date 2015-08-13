@@ -5,8 +5,8 @@
     <!-- lessons list-->
     <ul class="lessons list-group">
         <li ng-repeat="lesson in chapter.lessons"
-            class="list-group-item"
-            ng-class="{'active': isCurrent(lesson.name)}">
+            class="lesson-link list-group-item"
+            ng-class="{'current-lesson-link': isCurrent(lesson.name)}">
 
             <a ui-sref="book.chapter.lesson({lesson : lesson.name})" >{{lesson.name}}</a>
         </li>
