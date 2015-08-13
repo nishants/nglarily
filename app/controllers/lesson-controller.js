@@ -9,8 +9,12 @@
             },
             render = function (lesson) {
               $scope.lesson = lesson;
+            },
+            templateForSection = function(section){
+              return 'pages/sections/'+ section.type + '.html';
             };
 
+        $scope.templateFor = templateForSection;
         DataService.lesson(render, error)
       }]
   );
