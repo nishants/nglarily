@@ -13,4 +13,11 @@ ul {list-style-type: none;}
 .CodeMirror {
   border: 1px solid #eee;
   height: auto !important;
+  line-height: inherit !important;
+  font-family: SourceCode !important;
+}
+
+@font-face {
+  font-family: SourceCode;
+  src: url("../fonts/source-code-regular.otf") format("opentype");
 }
