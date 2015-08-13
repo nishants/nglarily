@@ -21,6 +21,10 @@ ul {list-style-type: none;}
   font-family: SourceCode;
   src: url("../fonts/source-code-regular.otf") format("opentype");
 }
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/raleway-light.ttf") format("opentype");
+}
 
 .lesson-lines{
   font-size: 1.5em;
@@ -29,4 +33,9 @@ ul {list-style-type: none;}
 
 .even-line{
   background-color: #f9f9f9;
+}
+
+body{
+  font-family: Raleway;
+
 }
