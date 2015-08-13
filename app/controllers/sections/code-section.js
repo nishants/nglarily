@@ -6,7 +6,8 @@
             editorOptions = {
               readOnly: true,
               lineNumbers: true,
-              viewportMargin: Infinity
+              viewportMargin: Infinity,
+              mode: "htmlmixed"
             },
 
             editorElement = function(){
