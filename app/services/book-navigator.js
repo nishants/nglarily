@@ -23,7 +23,7 @@
               nextChapter ,
               nextLesson ;
 
-          currentChapter = currentChapterName ? (currentChapter.isLast(currentLessonName) ? undefined : currentChapter) : undefined;
+          currentChapter = currentChapter ? (currentChapter.isLast(currentLessonName) ? undefined : currentChapter) : undefined;
           nextChapter = currentChapter ? currentChapter : book.nextTo(currentChapterName);
           nextLesson = nextChapter ? nextChapter.nextTo(currentLessonName) : undefined;
 
