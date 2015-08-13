@@ -3,7 +3,14 @@
 
   nglarily.module.factory("BookNavigator", ["$state", "UserView", function ($state, UserView) {
 
-    var toNextChapter = function (chapter) {
+    var
+        toBook = function (book) {
+          return $state.href("book", {
+            book: book.name
+          });
+        },
+
+        toNextChapter = function (chapter) {
           return $state.href("book.chapter", {
             chapter: chapter.name
           });
@@ -32,7 +39,7 @@
           } else if (nextChapter) {
             return toNextChapter(nextChapter);
           } else{
-            return "http://google.com";
+            return toBook(book);
           }
         };
 

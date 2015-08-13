@@ -8,7 +8,9 @@
             error = function (err) {
               console.error(err);
             },
-            goBack = function(){alert("lets go back...");},
+            goBack = function () {
+              alert("lets go back...");
+            },
             goNext = function () {
               if (!$scope.book) return; // ignore if book not loaded
               window.location = BookNavigator.nextUrl($scope.book, {location: false});
