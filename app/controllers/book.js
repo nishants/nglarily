@@ -10,7 +10,7 @@
             };
 
         $scope.next = function(){
-          BookNavigator.next();
+          BookNavigator.goToNextOf($scope.book);
         };
 
         $scope.collapseBook = function(){

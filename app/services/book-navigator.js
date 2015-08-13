@@ -1,14 +1,23 @@
 (function () {
   "use strict"
 
-  nglarily.module.factory("BookNavigator", ["$http", "$stateParams", function ($http, $stateParams) {
+  nglarily.module.factory("BookNavigator", ["$state", "UserView", function ($state, UserView) {
 
-    var next = function (){
-      alert("next navigation")
-    };
+    var openChapter = function (chapter) {
+          $state.go("book.chapter", {
+            chapter: chapter.name
+          })
+        },
+
+        goNext = function (book) {
+          var nextChapter = book.nextTo(UserView.currentChapter());
+          if (nextChapter) {
+            openChapter(nextChapter);
+          }
+        };
 
     return {
-      next: next
+      goToNextOf: goNext
     };
   }]);
 

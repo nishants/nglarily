@@ -18,7 +18,8 @@
       expandChapter: function () {
         return currentLesson() == null;
       },
-      currentLesson: currentLesson
+      currentLesson: currentLesson,
+      currentChapter: currentChapter
     };
 
   }]);
