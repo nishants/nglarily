@@ -11,6 +11,10 @@
           return lessons;
         },
 
+        parseChapter = function(data, lessons){
+          return new nglarily.models.Chapter(data, lessons);
+        },
+
         currentBook =function(){
           return "books/"+ $stateParams.book +".json";
         },
@@ -27,7 +31,7 @@
           var fromUrl = chapterName();
           for(var i=0; i< chapters.length; i++){
             if(chapters[i].name == fromUrl){
-              return new nglarily.models.Chapter(chapters[i], parseLessons(chapters[i].lessons));
+              return chapters[i];
             }
           }
           return null;
@@ -46,7 +50,13 @@
 
         angularBook = function (success, error) {
           $http.get(currentBook()).then(function (response) {
-            success(response.data);
+            var chapters =[];
+            for(var i = 0; i < response.data.chapters.length; i++){
+              var data = response.data.chapters[i];
+              chapters.push(parseChapter(data, parseLessons(data.lessons)))
+            }
+
+            success(new nglarily.models.Book(response.data, chapters));
           }, error);
         },
 
