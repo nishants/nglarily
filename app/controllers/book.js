@@ -10,7 +10,7 @@
             };
 
         $scope.next = function(){
-          return BookNavigator.nextUrl($scope.book);
+          return $scope.book ? BookNavigator.nextUrl($scope.book): "";
         };
 
         $scope.collapseBook = function(){
