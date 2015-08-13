@@ -3,19 +3,20 @@
 
   nglarily.module.factory("BookNavigator", ["$state", "UserView", function ($state, UserView) {
 
-    var openChapter = function (chapter) {
-          $state.go("book.chapter", {
+    var toNextChapter = function (chapter) {
+          return $state.href("book.chapter", {
             chapter: chapter.name
           });
         },
 
-        openLesson = function (chapter, lesson) {
-          $state.go("book.chapter.lesson", {
+        toNextLesson = function (chapter, lesson) {
+          return $state.href("book.chapter.lesson", {
             chapter: chapter.name,
             lesson: lesson.name
           });
         },
-        goNext = function (book) {
+
+        nextUrl = function (book) {
           var currentChapterName = UserView.currentChapter(),
               currentChapter    = book.get(currentChapterName),
               currentLessonName = UserView.currentLesson(),
@@ -27,16 +28,16 @@
           nextLesson = nextChapter ? nextChapter.nextTo(currentLessonName) : undefined;
 
           if (nextLesson) {
-            openLesson(nextChapter, nextLesson);
+            return toNextLesson(nextChapter, nextLesson);
           } else if (nextChapter) {
-            openChapter(nextChapter);
+            return toNextChapter(nextChapter);
           } else{
-            alert("end of boook");
+            return "http://google.com";
           }
         };
 
     return {
-      goToNextOf: goNext
+      nextUrl: nextUrl
     };
   }]);
 

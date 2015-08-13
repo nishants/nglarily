@@ -1,7 +1,7 @@
 <div id="navigator" class="container">
-    <button
+    <a
             ng-click="next()"
-            class="row btn btn-lg btn-block">next</button>
+            class="row btn btn-lg btn-default btn-block" href="{{next()}}">next</a>
 </div>
 <div class="book container">
     <a ui-sref="book(book.name)"> {{book.name}} </a>
