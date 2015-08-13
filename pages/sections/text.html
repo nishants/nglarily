@@ -1,5 +1,10 @@
-<h3>{{section.head}}</h3>
+<h3 class="lesson-head">{{section.head}}</h3>
 <div>
-    <p ng-repeat="line in section.lines">{{line}}</p>
+    <p
+            ng-class="{'even-line': (($index%2) == 0)}"
+            class="lesson-lines"
+            ng-repeat="line in section.lines">
+        - {{line}}
+    </p>
 </div>
 

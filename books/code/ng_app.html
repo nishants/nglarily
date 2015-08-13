@@ -8,12 +8,6 @@
         $stateProvider.state("home-page", {
             url: "",
             template: '<h1>hompage</h1><a ui-sref="items-page">List Items</a>'
-        }).state("items-page", {
-            url: "/items",
-            template: "<ul ng-repeat='item in items'><li>{{item.name}}</li></ul>",
-            controller: function ($scope) {
-                $scope.items = [{name: "item-one"}, {name: "item-two"}];
-            }
         });
     }]);
 </script>
