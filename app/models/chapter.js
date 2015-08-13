@@ -16,6 +16,10 @@
         this.lessons = lessons;
       };
 
+  Chapter.prototype.isLast = function (lessonName) {
+    return indexOf(lessonName, this.lessons) == (this.lessons.length -1);
+  };
+
   Chapter.prototype.nextTo = function (lessonName) {
     return this.lessons[indexOf(lessonName, this.lessons) +1];
   };

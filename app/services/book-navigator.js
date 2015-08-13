@@ -16,15 +16,22 @@
           });
         },
         goNext = function (book) {
-          var
-              currentLesson = book.nextTo(UserView.currentLesson()),
-              nextChapter = book.nextTo(UserView.currentChapter()),
-              nextLesson = nextChapter ? nextChapter.nextTo(currentLesson) : undefined;
+          var currentChapterName = UserView.currentChapter(),
+              currentChapter    = book.get(currentChapterName),
+              currentLessonName = UserView.currentLesson(),
+              nextChapter ,
+              nextLesson ;
 
-          if (currentLesson) {
+          currentChapter = currentChapterName ? (currentChapter.isLast(currentLessonName) ? undefined : currentChapter) : undefined;
+          nextChapter = currentChapter ? currentChapter : book.nextTo(currentChapterName);
+          nextLesson = nextChapter ? nextChapter.nextTo(currentLessonName) : undefined;
+
+          if (nextLesson) {
             openLesson(nextChapter, nextLesson);
           } else if (nextChapter) {
             openChapter(nextChapter);
+          } else{
+            alert("end of boook");
           }
         };
 

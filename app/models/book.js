@@ -16,6 +16,10 @@
         this.chapters = chapters;
       };
 
+  Book.prototype.get = function (chapterName) {
+    return this.chapters[indexOf(chapterName, this.chapters)];
+  };
+
   Book.prototype.nextTo = function (chapterName) {
     return this.chapters[indexOf(chapterName, this.chapters) +1];
   };
