@@ -4,7 +4,9 @@
   nglarily.module.controller("CodeSection", ["$scope", "SectionData", "$timeout", function ($scope, SectionData, $timeout) {
         var
             editorOptions = {
-              readOnly: true
+              readOnly: true,
+              lineNumbers: true,
+              viewportMargin: Infinity
             },
 
             editorElement = function(){
