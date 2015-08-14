@@ -13,7 +13,7 @@
           var chapter = $scope.book.chapters[chapterIndex],
               newLessonName = $scope.newLessons[chapterIndex];
 
-          chapter.lessons.push({name: newLessonName});
+          chapter.lessons.push(new bookEditor.models.Lesson(newLessonName));
         };
 
         $scope.addChapter = function(){

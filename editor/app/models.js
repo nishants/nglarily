@@ -2,14 +2,17 @@
   "use strict"
 
   var Book = function () {};
-  bookEditor.models.Book = Book;
 
   var Chapter = function (name) {
     this.name = name;
     this.lessons = [];
   };
 
+  var Lesson = function (name) {
+    this.name = name;
+  };
+
+  bookEditor.models.Book = Book;
   bookEditor.models.Chapter = Chapter;
-
-
+  bookEditor.models.Lesson = Lesson;
 }).call(this);
