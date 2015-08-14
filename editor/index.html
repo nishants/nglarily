@@ -52,6 +52,14 @@
         <input type="text"
                ng-model="chapter.name"
                class="form-control form-group edit-chapter">
+
+        <ul>
+        <li class="chapter-lessons-list" ng-repeat="lesson in chapter.lessons">
+            <input type="text"
+                   ng-model="lesson.name"
+                   class="form-control form-group edit-chapter">
+        </li>
+        </ul>
     </form>
 
 
