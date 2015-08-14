@@ -1,0 +1,54 @@
+{
+  "name": "nglarily",
+  "chapters": [
+
+    {
+      "name": "angular_module",
+      "lessons": [
+        {
+          "name": "ng_app",
+          "sections": [
+            {"type": "code", "href": "books/code/ng_app.html"},
+            {
+              "type": "text",
+              "head": "create and ng-app element",
+              "lines": [
+                "angular reads inside this container",
+                "scanning its children for angular elements",
+                "angular will reject anything outside it."
+              ]
+            }
+          ]
+        },
+        {"name": "angular_modules"}
+      ]
+    },
+    {
+      "name": "ui_router",
+      "lessons": [
+        {"name": "ui_view"},
+        {"name": "angular_config"},
+        {"name": "state-provider-add-state"}
+      ]
+    },
+    {
+      "name": "angular_controller",
+      "lessons": [
+        {"name": "ui_router_ui_view"},
+        {"name": "angular_scope"},
+        {"name": "angular_ng_repeat"},
+        {"name": "ui_router_ui_sref"}
+      ]
+
+    },
+    {
+      "name": "angular_service",
+      "lessons": [
+        {"name": "angular_factory"},
+        {"name": "create_angular_service"},
+        {"name": "angular_injector"},
+        {"name": "angular_$http"}
+      ]
+    }
+  ]
+}
