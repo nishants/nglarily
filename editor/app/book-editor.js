@@ -8,9 +8,18 @@
         };
 
         $http.get("empty-book.json").then(onGetBook);
+
+        $scope.addLessonTo = function(chapterIndex){
+          var chapter = $scope.book.chapters[chapterIndex],
+              newLessonName = $scope.newLessons[chapterIndex];
+
+          chapter.lessons.push({name: newLessonName});
+        };
+
         $scope.addChapter = function(){
           $scope.book.chapters.push(new bookEditor.models.Chapter($scope.newChapter));
         };
+        $scope.newLessons = [];
       }]
   );
 
