@@ -9,10 +9,10 @@
               $scope.book = response.data;
             },
 
-            showLessonEditor = function(chapter, lesson){
-              isLessonEditorVisible = true;
+            showLessonEditor = function (show) {
+              isLessonEditorVisible = show;
             }
-        ;
+            ;
 
         $http.get("empty-book.json").then(onGetBook);
 
@@ -29,6 +29,10 @@
           return isLessonEditorVisible;
         };
 
+        $scope.saveLesson = function () {
+          showLessonEditor(false);
+        };
+
         $scope.showJson = function () {
           console.log(angular.toJson($scope.book));
         };
@@ -37,7 +41,10 @@
           var chapter = $scope.book.chapters[chapterIndex],
               lesson = chapter.lessons[lessonIndex];
 
-          showLessonEditor();
+          $scope.editingChapterIndex = chapterIndex;
+          $scope.editingLessonIndex = lessonIndex;
+
+          showLessonEditor(true);
         };
 
         $scope.addChapter = function () {

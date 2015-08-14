@@ -30,13 +30,16 @@
             z-index: 5;
             background-color: rgba(14, 14, 14, 0.8);
             padding: 5px;
-            height: 100vh;
+            height: 1000vh; /*cover the scrollable part*/
             width: 100vw;
             text-align: center;
             padding: 5%;
         }
         #chapters-editor {
             background-color: #cecece;
+        }
+        .blue-text{
+            color: lightblue;
         }
 
     </style>
@@ -92,6 +95,7 @@
     </form>
 
     <div id="lesson-editor" class="" ng-show="isLessonEditorVisible()">
+        <h3 class="blue-text">{{book.chapters[editingChapterIndex].name}} > {{book.chapters[editingChapterIndex].lessons[editingLessonIndex].name}}</h3>
         <textarea id="code-editor" ng-bind="code"></textarea>
 
         <input type="text"
@@ -107,6 +111,7 @@
         </div>
         <button id="save-lesson"
                 class="form-control btn btn-primary"
+                ng-click="saveLesson()"
                 >save</button>
     </div>
 
