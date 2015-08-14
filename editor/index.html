@@ -21,10 +21,24 @@
     <script src="app/editor.js"></script>
     <script src="app/book-editor.js"></script>
     <script src="app/models.js"></script>
+
     <style type="text/css">
+        #lesson-editor{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            background-color: rgba(14, 14, 14, 0.8);
+            padding: 5px;
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+            padding: 5%;
+        }
         #chapters-editor {
             background-color: #cecece;
         }
+
     </style>
 </head>
 
@@ -77,6 +91,24 @@
         </ul>
     </form>
 
+    <div id="lesson-editor" class="" ng-show="isLessonEditorVisible()">
+        <textarea id="code-editor" ng-bind="code"></textarea>
+
+        <input type="text"
+               ng-model="lesson.name"
+               class="form-control">
+
+        <div class="input-group">
+            <input type="text"
+                   ng-model="lesson.name"
+                   class="form-control">
+            <span class="input-group-addon"
+                  ng-click="">add</span>
+        </div>
+        <button id="save-lesson"
+                class="form-control btn btn-primary"
+                >save</button>
+    </div>
 
 </div>
 </body>

@@ -3,13 +3,20 @@
 
   bookEditor.module.controller("BookEditor", ["$scope", "$http", function ($scope, $http) {
 
-        var onGetBook = function(response){
-          $scope.book = response.data;
-        };
+        var
+            isLessonEditorVisible = false,
+            onGetBook = function (response) {
+              $scope.book = response.data;
+            },
+
+            showLessonEditor = function(chapter, lesson){
+              isLessonEditorVisible = true;
+            }
+        ;
 
         $http.get("empty-book.json").then(onGetBook);
 
-        $scope.addLessonTo = function(chapterIndex){
+        $scope.addLessonTo = function (chapterIndex) {
           var chapter = $scope.book.chapters[chapterIndex],
               newLessonName = $scope.newLessons[chapterIndex];
 
@@ -17,18 +24,23 @@
           $scope.newLessons[chapterIndex] = null;
         };
 
-        $scope.showJson = function(){
+
+        $scope.isLessonEditorVisible = function () {
+          return isLessonEditorVisible;
+        };
+
+        $scope.showJson = function () {
           console.log(angular.toJson($scope.book));
         };
 
-        $scope.editLesson = function(chapterIndex, lessonIndex) {
+        $scope.editLesson = function (chapterIndex, lessonIndex) {
           var chapter = $scope.book.chapters[chapterIndex],
               lesson = chapter.lessons[lessonIndex];
 
-          alert("editing - "+ chapter.name + " : "+lesson.name)
+          showLessonEditor();
         };
 
-        $scope.addChapter = function(){
+        $scope.addChapter = function () {
           $scope.book.chapters.push(new bookEditor.models.Chapter($scope.newChapter));
           $scope.newChapter = null;
         };
