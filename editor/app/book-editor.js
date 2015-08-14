@@ -16,6 +16,10 @@
           chapter.lessons.push(new bookEditor.models.Lesson(newLessonName));
         };
 
+        $scope.showJson = function(){
+          console.log(angular.toJson($scope.book));
+        };
+
         $scope.addChapter = function(){
           $scope.book.chapters.push(new bookEditor.models.Chapter($scope.newChapter));
         };
