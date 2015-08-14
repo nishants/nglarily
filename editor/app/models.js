@@ -10,6 +10,7 @@
 
   var Lesson = function (name) {
     this.name = name;
+    this.sections = [];
   };
 
   bookEditor.models.Book = Book;

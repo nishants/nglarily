@@ -14,6 +14,7 @@
               newLessonName = $scope.newLessons[chapterIndex];
 
           chapter.lessons.push(new bookEditor.models.Lesson(newLessonName));
+          $scope.newLessons[chapterIndex] = null;
         };
 
         $scope.showJson = function(){
@@ -22,6 +23,7 @@
 
         $scope.addChapter = function(){
           $scope.book.chapters.push(new bookEditor.models.Chapter($scope.newChapter));
+          $scope.newChapter = null;
         };
         $scope.newLessons = [];
       }]
