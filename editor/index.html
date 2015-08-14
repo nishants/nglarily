@@ -22,7 +22,7 @@
     <script src="app/book-editor.js"></script>
     <script src="app/models.js"></script>
     <style type="text/css">
-        #chapets-editor {
+        #chapters-editor {
             background-color: #cecece;
         }
     </style>
@@ -48,8 +48,9 @@
     </form>
 
     <form
-            id="chapets-editor"
+            id="chapters-editor"
             class="form-group well"
+            ng-init="chapterIndex = $index"
             ng-repeat="chapter in book.chapters">
         <input type="text"
                ng-model="chapter.name"
@@ -57,17 +58,21 @@
 
         <div class="input-group form-group">
             <input type="text"
-                   ng-model="newLessons[$index]"
+                   ng-model="newLessons[chapterIndex]"
                    class="form-control"/>
             <span class="input-group-addon"
-                  ng-click="addLessonTo($index)">+</span>
+                  ng-click="addLessonTo(chapterIndex)">+</span>
         </div>
 
         <ul>
-            <li class="chapter-lessons-list" ng-repeat="lesson in chapter.lessons">
+            <li class="chapter-lessons-list input-group"
+                ng-init="lessonIndex = $index"
+                ng-repeat="lesson in chapter.lessons">
                 <input type="text"
                        ng-model="lesson.name"
-                       class="form-control form-group edit-chapter">
+                       class="form-control edit-chapter">
+                <span class="input-group-addon"
+                      ng-click="editLesson(chapterIndex, lessonIndex)">edit</span>
             </li>
         </ul>
     </form>

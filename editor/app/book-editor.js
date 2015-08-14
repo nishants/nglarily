@@ -21,6 +21,13 @@
           console.log(angular.toJson($scope.book));
         };
 
+        $scope.editLesson = function(chapterIndex, lessonIndex) {
+          var chapter = $scope.book.chapters[chapterIndex],
+              lesson = chapter.lessons[lessonIndex];
+
+          alert("editing - "+ chapter.name + " : "+lesson.name)
+        };
+
         $scope.addChapter = function(){
           $scope.book.chapters.push(new bookEditor.models.Chapter($scope.newChapter));
           $scope.newChapter = null;
