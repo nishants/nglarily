@@ -7,7 +7,10 @@
           $scope.book = response.data;
         };
 
-        $http.get("empty-book.json").then(onGetBook)
+        $http.get("empty-book.json").then(onGetBook);
+        $scope.addChapter = function(){
+          $scope.book.chapters.push(new bookEditor.models.Chapter($scope.newChapter));
+        };
       }]
   );
 

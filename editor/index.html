@@ -20,12 +20,18 @@
 
     <script src="app/editor.js"></script>
     <script src="app/book-editor.js"></script>
+    <script src="app/models.js"></script>
+    <style type="text/css">
+        #chapets-editor{
+            background-color: #cecece;
+        }
+    </style>
 </head>
 
 <body ng-app="book-editor"> 
 <div ng-controller="BookEditor" class="container">
 
-    <form class="form-group" id="edit-book-form">
+    <form class="form-group well" id="edit-book-form">
         <input type="text"
                ng-model="book.name"
                class="form-control form-group">
@@ -38,6 +44,17 @@
                   ng-click="addChapter()">+</span>
         </div>
     </form>
+
+    <form
+            id="chapets-editor"
+            class="form-group well"
+            ng-repeat="chapter in book.chapters">
+        <input type="text"
+               ng-model="chapter.name"
+               class="form-control form-group edit-chapter">
+    </form>
+
+
 
 </div>
 </body>
