@@ -30,8 +30,8 @@
               CodeMirror.fromTextArea(editorElement(), editorOptions);
             },
 
-            setCode = function (code) {
-              $scope.code = code;
+            setCode = function (snippet) {
+              $scope.code = snippet.code;
               $timeout(setCodeMirror);
 
             };
