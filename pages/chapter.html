@@ -1,14 +1,14 @@
 <!--display chapter-->
 <div id="expanded-chapter" class="chapter container" >
-    <h1 class="chapter-name row">{{chapter.name}}</h1>
+    <h3 class="chapter-name row">{{chapter.name}}</h3>
 
     <!-- lessons list-->
-    <ul class="lessons list-group">
+    <ul class="lessons list-inline">
         <li ng-repeat="lesson in chapter.lessons"
-            class="lesson-link list-group-item"
+            class="lesson-link"
             ng-class="{'current-lesson-link': isCurrent(lesson.name)}">
 
-            <a ui-sref="book.chapter.lesson({lesson : lesson.name})" >{{lesson.name}}</a>
+            <a ui-sref="book.chapter.lesson({lesson : lesson.name})" > {{lesson.name}} -> </a>
         </li>
     </ul>
 </div>
