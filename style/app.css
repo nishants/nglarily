@@ -1,4 +1,4 @@
-.page{
+.page {
   min-height: 100vh;
 }
 
@@ -8,7 +8,9 @@ a.hidden-chapter {
 
 }
 
-ul {list-style-type: none;}
+ul {
+  list-style-type: none;
+}
 
 .CodeMirror {
   border: 1px solid #eee;
@@ -21,30 +23,31 @@ ul {list-style-type: none;}
   font-family: SourceCode;
   src: url("../fonts/source-code-regular.otf") format("opentype");
 }
+
 @font-face {
   font-family: Raleway;
   src: url("../fonts/raleway-light.ttf") format("opentype");
 }
 
-.lesson-lines{
+.lesson-lines {
   font-size: 1.5em;
   margin: 0;
 }
 
-.even-line{
+.even-line {
   background-color: #f9f9f9;
 }
 
-body{
+body {
   font-family: Raleway;
   color: #656565;
 }
 
-.lesson-link{
+.lesson-link {
   background-color: #ffffff;
 }
 
-.current-lesson-link{
+.current-lesson-link {
   background-color: #f4f4f4;
 }
 
@@ -54,4 +57,13 @@ a, a:visited {
 
 a:hover, a:active {
   color: #656565 !important;
+}
+
+a.chapter-link {
+  color: black !important;
+  font-size: 1.3em;
+}
+
+a.lesson-link{
+  color: rgba(101, 101, 101, 0.63) !important;
 }

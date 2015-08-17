@@ -1,25 +1,29 @@
-<div id="navigator" class="container">
-    <a
-            ng-click="next()"
-            class="row btn btn-lg btn-default btn-block" href="{{next()}}">next</a>
-</div>
-<div class="book container">
+<!--<div id="navigator" class="container">-->
+<!--<a-->
+<!--ng-click="next()"-->
+<!--class="row btn btn-lg btn-default btn-block" href="{{next()}}">next</a>-->
+<!--</div>-->
+<div class="book container col-lg-2">
     <a ui-sref="book(book.name)"> {{book.name}} </a>
 
     <!--chapters-->
-    <div class="chapter-item row" ng-repeat="chapter in book.chapters" ng-hide="collapseBook()">
-        <a class="chapter-link" ui-sref="book.chapter({chapter: chapter.name})">{{chapter.name}}</a>
+    <div id="chapters-list" class="list-unstyled">
+        <div class="chapter-item" ng-repeat="chapter in book.chapters">
+            <a class="chapter-link" ui-sref="book.chapter({chapter: chapter.name})">{{chapter.name}}</a>
 
-        <!--lessons-->
-        <ul class="lessons list-group">
-            <li class="lesson list-group-item" ng-repeat="lesson in chapter.lessons">
-                <a ui-sref="book.chapter.lesson({chapter: chapter.name, lesson: lesson.name})"> {{lesson.name}}</a>
-            </li>
-        </ul>
+            <!--lessons-->
+            <ul class="list-unstyled">
+                <li class="lesson list-unstyled" ng-repeat="lesson in chapter.lessons">
+                    <a class="lesson-link"
+                       ui-sref="book.chapter.lesson({chapter: chapter.name, lesson: lesson.name})"> {{lesson.name}}</a>
+                </li>
+            </ul>
 
+        </div>
     </div>
 </div>
-<div ui-view>
+<div class="col-lg-10"
+     ui-view>
     <!-- chapters are rendered here. -->
 </div>
 
