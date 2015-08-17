@@ -36,6 +36,7 @@
               goNext();
               break;
           }
+          return false;
         };
 
         DataService.book(success, error);
