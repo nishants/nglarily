@@ -11,10 +11,6 @@
     };
 
     return {
-      chapterVisible: function () {
-        return currentChapter() != null;
-      },
-
       expandChapter: function () {
         return currentLesson() == null;
       },

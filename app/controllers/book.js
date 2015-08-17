@@ -21,11 +21,6 @@
           return $scope.book ? BookNavigator.nextUrl($scope.book) : "";
         };
 
-
-        $scope.collapseBook = function () {
-          return UserView.chapterVisible();
-        };
-
         document.onkeydown = function (evt) {
           evt = evt || window.event;
           switch (evt.keyCode) {
