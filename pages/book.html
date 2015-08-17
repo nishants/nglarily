@@ -1,8 +1,4 @@
-<!--<div id="navigator" class="container">-->
-<!--<a-->
-<!--ng-click="next()"-->
-<!--class="row btn btn-lg btn-default btn-block" href="{{next()}}">next</a>-->
-<!--</div>-->
+
 <div class="book container col-lg-2">
     <a ui-sref="book(book.name)"> {{book.name}} </a>
 
@@ -22,8 +18,15 @@
         </div>
     </div>
 </div>
+
 <div class="col-lg-10"
      ui-view>
+    <h1>{{book.description}}</h1>
     <!-- chapters are rendered here. -->
 </div>
 
+<!--<div id="navigator" class="container">-->
+    <!--<a ng-click="next()"-->
+       <!--class="row btn btn-lg btn-default btn-block"-->
+       <!--href="{{next()}}">next</a>-->
+<!--</div>-->

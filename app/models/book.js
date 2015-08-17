@@ -13,6 +13,7 @@
 
       Book = function (data, chapters) {
         this.name = data.name;
+        this.description = data.description;
         this.chapters = chapters;
       };
 

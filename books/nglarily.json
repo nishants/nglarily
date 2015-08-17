@@ -1,5 +1,7 @@
 {
   "name": "nglarily",
+  "description": "Create a single page app, with angularjs and ui.router.",
+
   "chapters": [
 
     {
