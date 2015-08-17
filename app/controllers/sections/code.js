@@ -37,7 +37,7 @@
 
             };
 
-        SectionData.codeFor($scope.section, setCode, showError);
+        SectionData.codeFor($scope.section.href, setCode, showError);
       }]
   );
 
