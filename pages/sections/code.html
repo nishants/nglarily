@@ -1,12 +1,12 @@
 <div ng-controller="CodeSection">
     <textarea id="code-editor" ng-bind="code"></textarea>
 
-    <h3 class="lesson-head">{{desc.head}}</h3>
-
-    <div>
+    <div class="code-description">
+        <h3 class="lesson-head">
+            {{description.head}}
+        </h3>
         <p class="lesson-lines"
-           ng-repeat="line in desc.lines">
-            - {{line}}
+           ng-repeat="line in description.lines">- {{line}}
         </p>
     </div>
 </div>

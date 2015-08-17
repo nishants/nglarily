@@ -31,8 +31,8 @@
             },
 
             setCode = function (snippet) {
-              $scope.code = snippet.code;
-              $scope.desc = snippet.desc;
+              $scope.code        = snippet.code;
+              $scope.description = snippet.desc;
               $timeout(setCodeMirror);
 
             };
