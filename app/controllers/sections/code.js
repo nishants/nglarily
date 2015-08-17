@@ -32,6 +32,7 @@
 
             setCode = function (snippet) {
               $scope.code = snippet.code;
+              $scope.desc = snippet.desc;
               $timeout(setCodeMirror);
 
             };
