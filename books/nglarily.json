@@ -8,17 +8,7 @@
         {
           "name": "ng_app",
           "sections": [
-            {"type": "code", "href": "books/code/ng_app.html"},
-            {
-              "type": "text",
-              "head": "create and ng-app element",
-              "lines": [
-                "angular reads inside this container",
-                "scanning its children for angular elements",
-                "angular will reject anything outside it."
-              ]
-            }
-          ]
+            {"type": "code", "href": "books/code/ng_app.html"}]
         },
         {"name": "angular_modules"}
       ]
