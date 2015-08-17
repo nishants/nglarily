@@ -2,7 +2,7 @@
   "use strict"
 
   var
-      Snippet = function (code, desc) {
+      Section = function (code, desc) {
         this.code = code;
         this.desc = desc;
       },
@@ -11,9 +11,9 @@
         var tokens      = snipppetText.split("**##"),
             code        = tokens[0],
             description = nglarily.models.SnippetDescription(tokens[1]);
-        return new Snippet(code, description);
+        return new Section(code, description);
       };
 
-  nglarily.models.Snippet = parse;
+  nglarily.models.Section = parse;
 
 }).call(this);
