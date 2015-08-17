@@ -7,10 +7,12 @@
       "lessons": [
         {
           "name": "ng_app",
-          "sections": [
-            {"type": "code", "href": "books/code/ng_app.html"}]
+          "sections": [{"type": "code", "href": "books/code/ng_app.html"}]
         },
-        {"name": "angular_modules"}
+        {
+          "name": "angular_modules",
+          "sections": [{"type": "code", "href": "books/code/angular_modules.html"}]
+        }
       ]
     },
     {
