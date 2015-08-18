@@ -1,6 +1,6 @@
 <!--display chapter-->
 <div id="expanded-chapter" class="chapter container" >
-    <h3 class="chapter-name row">{{chapter.name}}</h3>
+    <a ui-sref="book.chapter({chapter : chapter.name})" class="chapter-name row">{{chapter.name}}</a>
 
     <!-- lessons list-->
     <ul class="lessons list-inline">
