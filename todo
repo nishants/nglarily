@@ -1,0 +1,29 @@
+remove redundent ajax calls
+add decent loads for lessons.
+add gulp
+page loading time.
+
+
+add tutorial :
+- angular quick start
+- angular directives
+- testing controllers
+
+Release -
+user feedbacks :
+how many users visisted,
+avergae lessons visisted per user
+generic feedbacks.
+
+------------- Stage 2 -------------------------
+redefine domain,
+write tests for controllers,
+design a preview corousel(courousel is lessons in a chapter).
+add a dashboard (with books and corousels)
+
+------------- Stage 3 -------------------------
+add a backend,
+create book feature
+
+------------- Stage 4 -------------------------
+open for all.
