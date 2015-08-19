@@ -26,12 +26,12 @@
           switch (evt.keyCode) {
             case 37:
               goBack();
-              break;
+              return false;
             case 39:
               goNext();
-              break;
+              return false;
           }
-          return false;
+          return true;
         };
 
         DataService.book(success, error);
