@@ -1,7 +1,6 @@
 describe("sample spe", function () {
 
-  var
-      setupAngular = function () {};
+  var setupAngular = function () {};
 
   beforeEach(setupAngular);
 
