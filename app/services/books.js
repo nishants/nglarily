@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.factory("DataService", ["$http", "$stateParams", function ($http, $stateParams) {
+  nglarily.module.factory("Books", ["$http", "$stateParams", function ($http, $stateParams) {
     var
         parseLessons = function(lessonsData){
           var lessons =[];

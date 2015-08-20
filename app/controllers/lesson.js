@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("LessonController", ["$scope", "DataService", function ($scope, DataService) {
+  nglarily.module.controller("LessonController", ["$scope", "Books", function ($scope, Books) {
 
         var
             error = function (err) {
@@ -15,7 +15,7 @@
             };
 
         $scope.templateFor = templateForSection;
-        DataService.lesson(render, error)
+        Books.lesson(render, error)
       }]
   );
 

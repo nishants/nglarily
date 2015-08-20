@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("Chapter", ["$scope", "$stateParams", "DataService", "UserView", function ($scope, $stateParams, DataService, UserView) {
+  nglarily.module.controller("Chapter", ["$scope", "$stateParams", "Books", "UserView", function ($scope, $stateParams, Books, UserView) {
 
         var error = function (err) {
               console.error(err);
@@ -18,7 +18,7 @@
           return UserView.currentLesson() == lessonName;
         };
 
-        DataService.chapter(render, error);
+        Books.chapter(render, error);
       }]
   );
 

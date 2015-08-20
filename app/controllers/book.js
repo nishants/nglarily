@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.controller("Book", ["$scope","$window", "DataService", "UserView", "BookNavigator", function ($scope, $window, DataService, UserView, BookNavigator) {
+  nglarily.module.controller("Book", ["$scope","$window", "Books", "UserView", "BookNavigator", function ($scope, $window, Books, UserView, BookNavigator) {
         var success = function (book) {
               $scope.book = book;
             },
@@ -34,7 +34,7 @@
           return true;
         };
 
-        DataService.book(success, error);
+        Books.book(success, error);
       }]
   );
 
