@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  nglarily.module.factory("Books", ["$http", "$stateParams", function ($http, $stateParams) {
+  nglarily.module.factory("Books", ["$stateParams", "Server", function ($stateParams, Server) {
     var
         parseLessons = function(lessonsData){
           var lessons =[];
@@ -49,15 +49,18 @@
         },
 
         angularBook = function (success, error) {
-          $http.get(currentBook()).then(function (response) {
-            var chapters =[];
-            for(var i = 0; i < response.data.chapters.length; i++){
-              var data = response.data.chapters[i];
-              chapters.push(parseChapter(data, parseLessons(data.lessons)))
-            }
-
-            success(new nglarily.models.Book(response.data, chapters));
-          }, error);
+          Server.getBook(
+              currentBook(),
+              function (book) {
+                var chapters = [];
+                for (var i = 0; i < book.chapters.length; i++) {
+                  var data = book.chapters[i];
+                  chapters.push(parseChapter(data, parseLessons(data.lessons)))
+                }
+                success(new nglarily.models.Book(book, chapters));
+              },
+              error
+          );
         },
 
         getChapter = function (success, error) {
