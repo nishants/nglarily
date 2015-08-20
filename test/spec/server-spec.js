@@ -26,12 +26,12 @@ describe("Remote data and caching", function () {
   // Tests
   describe('book data and caching', function () {
     it('get a book', function () {
-      httpBackend.when("GET", "aBook").respond("book");
+      httpBackend.when("GET", "books/aBook.json").respond({name: "aBook"});
 
       server.getBook("aBook", callback.expected, callback.unexpected);
 
       httpBackend.flush();
-      expect(callback.expected).toHaveBeenCalledWith("book");
+      expect(callback.expected).toHaveBeenCalledWith({name: "aBook"});
       expect(callback.unexpected).not.toHaveBeenCalled();
     });
   });

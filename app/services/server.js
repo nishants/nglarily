@@ -2,14 +2,23 @@
   "use strict"
 
   nglarily.module.factory("Server", ["$http", function ($http) {
-    var getBook = function(url, success, error){
-      $http.get(url).then(function(response){
-        success(response.data);
-      }, error);
-    };
+
+    var
+        urlFor = function (bookName) {
+          return ("books/" + bookName + ".json");
+        },
+
+        getBook = function (name, success, error) {
+          $http.get(urlFor(name)).then(
+              function (response) {
+                success(response.data);
+              },
+              error
+          );
+        };
 
     return {
-      getBook : getBook
+      getBook: getBook
     };
   }]);
 

@@ -16,7 +16,7 @@
         },
 
         currentBook =function(){
-          return "books/"+ $stateParams.book +".json";
+          return $stateParams.book;
         },
 
         chapterName = function () {
